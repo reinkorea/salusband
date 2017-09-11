@@ -1,0 +1,100 @@
+{
+    "assessoriaTorrellesApp": {
+        "property" : {
+            "home": {
+                "title": "Propietats",
+                "createLabel": "Crea una nova propietat",
+                "createOrEditLabel": "Crea o edia una propietat",
+                "search": "Search for Property"
+            },
+            "created": "A new Property is created with identifier {{ param }}",
+            "updated": "A Property is updated with identifier {{ param }}",
+            "deleted": "A Property is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Property"
+            },
+            "ServiceType":{
+                "default":"Tipus de servei",
+                "RENT_AND_SALE":"Lloguer i Venda",
+                "RENT":"Lloguer",
+                "SALE":"Venda"
+            },
+            "sortBy":{
+                "default":"Ordenar per",
+                "price":"Preu",
+                "size":"Mida"
+            },
+            "show": "Mostra",
+            "showing": "Mostrant",
+            "quickSearch": "Cerca ràpida...",
+            "BuildingType":{
+                "HOUSE":"Casa",
+                "FLAT":"Apartament",
+                "STUDIO":"Estudi"
+            },
+            "YesNo":{
+              "yes":"Sí",
+              "no":"No"
+            },
+            "name": "Nom",
+            "price": "Preu",
+            "buildingType": "Tipus de vivenda",
+            "serviceType": "Tipus de servei",
+            "ref": "Ref",
+            "visible": "Visible",
+            "sold": "Venut",
+            "terrace": "Terrassa",
+            "m2": "M 2",
+            "numberBedroom": "Núm. d'habitacions",
+            "elevator": "Ascensor",
+            "furnished": "Moblat",
+            "pool": "Piscina",
+            "garage": "Garatge",
+            "numberWc": "Núm. de lavabos",
+            "ac": "Aire acond.",
+            "location": "Ubicació",
+            "user": "User",
+            "photo": "Photo",
+            "minPrice": "Preu mínim",
+            "maxPrice": "Preu màxim",
+            "minArea": "Àrea mínima",
+            "maxArea": "Àrea màxima",
+            "area": "Àrea",
+            "nearTransport": "Transport a prop",
+            "office": "Despatx",
+            "storage": "Traster",
+            "heating": "Calefacció",
+            "sidebar": {
+                "advancedSearch": "CERCA AVANÇADA",
+                "simpleSearch": "BUSCAR",
+                "reset": "NETEJAR"
+            },
+            "propertyDetail": {
+                "detail": "Detalls de la propietat",
+                "overview": "Vista general",
+                "features": {
+                    "featH": "Característiques de la casa",
+                    "featF": "Característiques del pis",
+                    "featS": "Característiques de l'estudi"
+                },
+                "description": "Descripció",
+                "contactAgent": "Contacta amb el gestor",
+                "contactForm": {
+                    "name": "Nom",
+                    "mail": "Correu electrònic",
+                    "phone": "Telèfon",
+                    "msg": "Hey, m'interessa l'immoble amb referència ",
+                    "send": "Enviar"
+                }
+            },
+            "admin": {
+                "mainData": "Dades principals",
+                "descriptionInput": "Escriu quelcom aquí...",
+                "facilities": "Facilitats"
+            }
+        }
+    }
+}

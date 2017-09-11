@@ -1,0 +1,30 @@
+{
+    "assessoriaTorrellesApp": {
+        "contact": {
+            "home": {
+                "title": "Contacte",
+                "createLabel": "Create a new Contact",
+                "createOrEditLabel": "Create or edit a Contact",
+                "search": "Search for Contact"
+            },
+            "created": "A new Contact is created with identifier {{ param }}",
+            "updated": "A Contact is updated with identifier {{ param }}",
+            "deleted": "A Contact is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contact {{ id }}?"
+            },
+            "detail": {
+                "title": "Contact"
+            },
+            "title1": "No dubti a posar-se en contacte amb nosaltres si necessita la nostra ajuda.",
+            "title2": "Si vol contactar-nos, si us plau ompli el següent formulari.",
+            "button": "Enviar",
+            "inputs": {
+                "name": "Nom",
+                "mail": "Email",
+                "subject": "Assumpte",
+                "message": "Missatge"
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "assessoriaTorrellesApp": {
+        "property" : {
+            "home": {
+                "title": "Propiedades",
+                "createLabel": "Crea una nueva propiedad",
+                "createOrEditLabel": "Crea o edita una propiedad",
+                "search": "Search for Property"
+            },
+            "created": "Un nuevo Property ha sido creado con el identificador {{ param }}",
+            "updated": "Un Property ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Property ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Property {{ id }}?"
+            },
+            "detail": {
+                "title": "Property"
+            },
+            "ServiceType":{
+                "RENT_AND_SALE":"Alquiler y Venta",
+                "RENT":"Alquiler",
+                "SALE":"Venta"
+            },
+            "sortBy":{
+                "default":"Ordenar por",
+                "price":"Precio",
+                "size":"Tamaño"
+            },
+            "show": "Muestra",
+            "showing": "Mostrando",
+            "quickSearch": "Búsqueda rápida...",
+            "BuildingType":{
+                "HOUSE":"Casa",
+                "FLAT":"Apartamento",
+                "STUDIO":"Estudio"
+            },
+            "YesNo":{
+                "yes":"Sí",
+                "no":"No"
+            },
+            "name": "Nombre",
+            "price": "Precio",
+            "buildingType": "Tipo de vivienda",
+            "serviceType": "Tipo de servicio",
+            "ref": "Ref",
+            "visible": "Visible",
+            "sold": "Vendido",
+            "terrace": "Terraza",
+            "m2": "M 2",
+            "numberBedroom": "Núm. de habitaciones",
+            "elevator": "Ascensor",
+            "furnished": "Amueblado",
+            "pool": "Piscina",
+            "garage": "Garaje",
+            "numberWc": "Núm. de baños",
+            "ac": "Aire acond.",
+            "location": "Ubicación",
+            "user": "User",
+            "photo": "Photo",
+            "minPrice": "Precio mínimo",
+            "maxPrice": "Precio máximo",
+            "minArea": "Area mínima",
+            "maxArea": "Area máxima",
+            "area": "Area",
+            "nearTransport": "Transporte cerca",
+            "office": "Despacho",
+            "storage": "Trastero",
+            "heating": "Calefacción",
+            "sidebar": {
+                "advancedSearch": "BÚSQUEDA AVANZADA",
+                "simpleSearch": "BUSCAR",
+                "reset": "LIMPIAR"
+            },
+            "propertyDetail": {
+                "detail": "Detalles de la propiedad",
+                "overview": "Visión general",
+                "features":{
+                    "featH": "Características de la casa",
+                    "featF": "Características del piso",
+                    "featS": "Características del estudio"
+                },
+                "description": "Descripción",
+                "contactAgent": "Contacta con el gestor",
+                "contactForm": {
+                    "name": "Nombre",
+                    "mail": "Correo electrónico",
+                    "phone": "Teléfono",
+                    "msg": "Hey, me interesa el inmueble con referencia ",
+                    "send": "Enviar"
+                }
+            },
+            "admin": {
+                "mainData": "Datos principales",
+                "descriptionInput": "Escribe algo aquí...",
+                "facilities": "Facilidades"
+            }
+        }
+    }
+}

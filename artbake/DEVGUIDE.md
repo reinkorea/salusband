@@ -94,3 +94,5 @@
 ---------------------------------------------------------
 - Bootstrap was all the range of a couple of years ago.
 - But Google's material design is growing in popularity.
+- npm install -g generator-jhipster-bootstrap-material-design
+- yo jhipster-bootstrap-material-design

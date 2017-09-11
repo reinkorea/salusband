@@ -1,0 +1,412 @@
+<script src="content/js/script.js"></script>
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1 id="myPropertyLabel" data-translate="assessoriaTorrellesApp.property.home.createOrEditLabel">Create or edit a Property
+            <small>{{VERSION}}</small>
+        </h1>
+        <div ncy-breadcrumb></div>
+    </section>
+    <jhi-alert-error></jhi-alert-error>
+    <section class="content">
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+            <div class="col-lg-6">
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title" data-translate="assessoriaTorrellesApp.property.admin.mainData">Datos principales</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="form-group" ng-show="vm.property.id">
+                            <label for="id" data-translate="global.field.id">ID</label>
+                            <input type="text" class="form-control" id="id" name="id"
+                                   ng-model="vm.property.id" readonly/>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.name"
+                                   for="field_name">Name</label>
+                            <input type="text" class="form-control" name="name" id="field_name"
+                                   ng-model="vm.property.name"
+                                   required/>
+                            <div ng-show="editForm.name.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.price"
+                                   for="field_price">Price</label>
+                            <input type="number" class="form-control" name="price" id="field_price"
+                                   ng-model="vm.property.price"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.buildingType"
+                                   for="field_buildingType">Building Type</label>
+                            <select class="form-control" name="buildingType" ng-model="vm.property.buildingType"
+                                    id="field_buildingType">
+                                <option value="HOUSE" data-translate="assessoriaTorrellesApp.BuildingType.HOUSE">HOUSE
+                                </option>
+                                <option value="FLAT" data-translate="assessoriaTorrellesApp.BuildingType.FLAT">FLAT
+                                </option>
+                                <option value="STUDIO" data-translate="assessoriaTorrellesApp.BuildingType.STUDIO">
+                                    STUDIO
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.serviceType"
+                                   for="field_serviceType">Service Type</label>
+                            <select class="form-control" name="serviceType" ng-model="vm.property.serviceType"
+                                    id="field_serviceType">
+                                <option value="RENT" data-translate="assessoriaTorrellesApp.ServiceType.RENT">RENT
+                                </option>
+                                <option value="SALE" data-translate="assessoriaTorrellesApp.ServiceType.SALE">SALE
+                                </option>
+                                <option value="RENT_AND_SALE"
+                                        data-translate="assessoriaTorrellesApp.ServiceType.RENT_AND_SALE">RENT_AND_SALE
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+<!--                            <label class="control-label" data-translaassessoriaTorrellesAppsApp.property.ref"
+                                   for="field_ref">Ref</label>
+                            <input type="text" class="form-control" name="ref" id="field_ref_prop"
+                                   ng-model="vm.property.ref"
+                                   required/>-->
+                            <div ng-show="editForm.ref.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.ref.$error.required" data-translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" ng-class="vm.property.visible === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="visible" id="field_visible"
+                                   ng-model="vm.property.visible"
+                            />
+                            &nbsp;
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.visible"
+                                   for="field_visible">Visible</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" ng-class="vm.property.sold === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="sold" id="field_sold"
+                                   ng-model="vm.property.sold"
+                            />
+                            &nbsp;
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.sold"
+                                   for="field_sold">Sold</label>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<label data-translaassessoriaTorrellesAppsApp.property.location" for="field_location">Location</label>-->
+                            <!--<select class="form-control" id="field_location" name="location"-->
+                                    <!--ng-model="vm.property.location"-->
+                                    <!--ng-options="location as location.ref for location in vm.locations | orderBy:'id' track by location.id">-->
+                                <!--<option value=""></option>-->
+                            <!--</select>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.propertyDetail.description"
+                                   for="field_description">Description</label>
+                            <textarea class="form-control textarea" name="description" id="field_description"
+                                      ng-model="vm.property.description" placeholder="{{ 'assessoriaTorrellesApp.property.admin.descriptionInput' | translate }}"
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+                            data-translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span
+                            data-translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <p>{{vm.imageStrings}}</p>
+                <div class="box box-success" style="margin-top: -10px;">
+                    <div class="box-header">
+                        <h3 class="box-title" data-translate="assessoriaTorrellesApp.property.admin.facilities">Facilidades</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox"  ng-class="vm.property.terrace === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'"  name="terrace" id="field_terrace"
+                                       ng-model="vm.property.terrace"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.terrace"
+                                       for="field_terrace">Terrace</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox" ng-class="vm.property.furnished === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="furnished" id="field_furnished"
+                                       ng-model="vm.property.furnished"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.furnished"
+                                       for="field_furnished">Furnished</label>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox" ng-class="vm.property.ac === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="ac" id="field_ac"
+                                       ng-model="vm.property.ac"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.ac"
+                                       for="field_ac">Ac</label>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox" ng-class="vm.property.elevator === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="elevator" id="field_elevator"
+                                       ng-model="vm.property.elevator"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.elevator"
+                                       for="field_elevator">Elevator</label>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox" ng-class="vm.property.pool === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="pool" id="field_pool"
+                                       ng-model="vm.property.pool"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.pool"
+                                       for="field_pool">Pool</label>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <input type="checkbox" ng-class="vm.property.garage === true ? 'icheckbox_flat-green checked' : 'icheckbox_flat-green'" name="garage" id="field_garage"
+                                       ng-model="vm.property.garage"
+                                />
+                                <label class="control-label" data-translate="assessoriaTorrellesApp.property.garage"
+                                       for="field_garage">Garage</label>
+
+                            </div>
+                        </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="control-label" data-translate="assessoriaTorrellesApp.property.m2"
+                                           for="field_m2">M 2</label>
+                                    <input type="number" class="form-control" name="m2" id="field_m2"
+                                           ng-model="vm.property.m2"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="control-label" data-translate="assessoriaTorrellesApp.property.numberBedroom"
+                                           for="field_numberBedroom">Number Bedroom</label>
+                                    <input type="number" class="form-control" name="numberBedroom" id="field_numberBedroom"
+                                           ng-model="vm.property.numberBedroom"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="control-label" data-translate="assessoriaTorrellesApp.property.numberWc"
+                                           for="field_numberWc">Number Wc</label>
+                                    <input type="number" class="form-control" name="numberWc" id="field_numberWc"
+                                           ng-model="vm.property.numberWc"
+                                    />
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="box box-success">
+                    <div class="box-header">
+                        <h3 class="box-title" data-translate="assessoriaTorrellesApp.property.location">Localización</h3>
+                    </div>
+                    <div class="box-body">
+
+                        <ng-map center="{{vm.location.latitude}},{{vm.location.longitude}}" zoom="16" on-click="pinClicked(this)" id="newPropMap">
+                            <marker position="[{{vm.location.latitude}},{{vm.location.longitude}}]" title="Property Location"></marker>
+                        </ng-map>
+
+                        <div class="form-group">
+
+
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.property.location">Address</label>
+
+
+                            <input type="text" class="form-control" ng-map-autocomplete ng-model="autocomplete" options="options" details="details" ng-change="console.log('asdas')"/>
+
+
+                            <button type="button" class="btn btn-success btn-block"
+                                    ng-click="vm.setLatLon(details.geometry.location,details.adr_address);">
+                                Locate</button>
+
+
+                        </div>
+
+
+                    <!--<div class="form-group">
+                            <label class="control-label" data-translaassessoriaTorrellesAppsApp.location.ref" for="field_ref">Ref</label>
+                            <input type="text" class="form-control" name="ref" id="field_ref" ng-model="vm.location.ref"/>
+                        </div>-->
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.location.province" for="field_province">Province</label>
+                            <input type="text" class="form-control" name="province" id="field_province" ng-model="vm.location.province" required />
+                            <div ng-show="editForm.province.$invalid">
+                                <p class="help-block" ng-show="editForm.province.$error.required" data-translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.location.town" for="field_town">Town</label>
+                            <input type="text" class="form-control" name="town" id="field_town" ng-model="vm.location.town" required/>
+                            <div ng-show="editForm.town.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.town.$error.required" data-translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.location.latitude" for="field_latitude">Latitude</label>
+                            <input type="number" class="form-control" name="latitude" id="field_latitude"
+                                   ng-model="vm.location.latitude"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" data-translate="assessoriaTorrellesApp.location.longitude" for="field_longitude">Longitude</label>
+                            <input type="number" class="form-control" name="longitude" id="field_longitude"
+                                   ng-model="vm.location.longitude"
+                            />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!--{{vm.storedPhotos}}-->
+                <!-- Hover-Fall Effect-->
+                <div class="col-lg-12">
+                    <div class="col-xs-6 col-sm-3" ng-repeat="x in vm.storedPhotos track by x.id">
+                        <div class="fall-item fall-effect">
+                            <img data-ng-src="{{'data:' + x.imageContentType + ';base64,' + x.image}}" width="300" height="300"/>
+                            <div class="mask">
+                                <h2>{{x.name}}</h2>
+                                <!--<p>{{x.description}}</p>-->
+                                <br>
+                                <button type="button" class="btn btn-danger" ng-click="vm.deleteFile(x.id)">Delete</button>
+
+
+                                <button type="button" class="btn btn-success" ng-click="vm.makeCover(x.id)">Cover</button>
+                            </div>
+                        </div>
+                        <!--<h4 class="text-center">Hover-Fall</h4>-->
+                    </div>
+
+                    <!--<div class="col-xs-6 col-sm-3" ng-repeat="x in vm.storedPhotos track by x.id">-->
+
+
+                        <!--<img data-ng-src="{{'data:' + x.imageContentType + ';base64,' + x.image}}" width="300" height="300"/>-->
+
+                        <!--<div class="row text-center">-->
+
+
+                            <!--<button type="button" class="btn btn-alert" ng-click="vm.deleteFile(x.id)">Delete</button>-->
+
+
+                            <!--<button type="button" class="btn btn-info" ng-click="vm.makeCover(x.id)">Cover</button>-->
+
+
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+
+                <!--{{vm.storedPhotos}}-->
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-lg-4" ng-repeat="x in vm.toUploadPhotos">-->
+                    <!--<div>-->
+
+                        <!--<label>{{x.name}}</label>-->
+                    <!--</div>-->
+                    <!--<div>-->
+
+                        <!--<img data-ng-src="{{'data:' + x.imageContentType + ';base64,' + x.image}}" style="max-height: 150px; max-width: 130px;"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+            <!--</div>-->
+            <div class="col-lg-12">
+                <h3>
+                    <a name="gallery-example" class="anchor" href="#gallery-example"><span class="octicon octicon-link"></span></a>Gallery upload
+                </h3>
+                <div flow-init
+                     flow-files-submitted="$flow.upload()"
+                     flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                     flow-files-added=""
+                >
+                    <div class="drop" flow-drop ng-class="dropClass">
+                        <span class="btn btn-default" flow-btn>Upload Image</span>
+                        <span class="btn btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images</span>
+                        <b>OR</b>
+
+                            <div class="dropZone">Drop files here</div>
+
+                    </div>
+
+                    <br/>
+
+                    <div>
+
+                        <div ng-repeat="file in $flow.files" class="gallery-box">
+                            <span class="title">{{file.name}}</span>
+                            <div class="thumbnail" ng-show="$flow.files.length">
+                                <img flow-img="file" width="50%" height="50%"/>
+                            </div>
+                            <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+                                <div class="progress-bar" role="progressbar"
+                                     aria-valuenow="{{file.progress() * 100}}"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100"
+                                     ng-style="{width: (file.progress() * 100) + '%'}">
+                                    <span class="sr-only">{{file.progress()}}% Complete</span>
+                                </div>
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-xs btn-danger" ng-click="file.cancel()">
+                                    Remove
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <Button type="button" class="btn btn-success" ng-click="vm.addFiles($flow.files)">Add files</Button>
+
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+<script>
+    $(function () {
+        //bootstrap WYSIHTML5 - text editor
+        $(".textarea").wysihtml5();
+    });
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass: 'iradio_flat-green'
+    });
+</script>

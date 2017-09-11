@@ -1,0 +1,32 @@
+{
+    "home": {
+        "title": "Bienvenido",
+        "subtitle": "Visita gratis nuestras propiedades",
+        "button": "Ver propiedades",
+        "reminder": "Antes de programar tienes que hacer un pull",
+        "logged": {
+            "message": "Está conectado como \"{{username}}\"."
+        },
+        "question": "Si tiene preguntas sobre JHipster:",
+        "link": {
+            "homepage": "Página de inicio de JHipster",
+            "stackoverflow": "JHipster en Stack Overflow",
+            "bugtracker": "JHipster seguimiento de errores",
+            "chat": "Sala de chat pública de JHipster",
+            "follow": "contacto @java_hipster en Twitter"
+        },
+        "like": "Si te gusta JHipster, danos una estrella en",
+        "github": "GitHub",
+        "form": {
+            "country": "País",
+            "location": "Ubicación",
+            "bedroom": "Dormitorio",
+            "bathroom": "Baño",
+            "status": "Estado",
+            "type": "Tipo",
+            "minprice": "Precio Mínimo",
+            "maxprice": "Precio Máximo",
+            "button": "Buscar"
+        }
+    }
+}

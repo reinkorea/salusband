@@ -1,0 +1,32 @@
+{
+    "home": {
+        "title": "Benvingut",
+        "subtitle": "Visita gratis les nostres propietats",
+        "button": "Veure propietats",
+        "reminder": "Abans de programar has de fer un pull!",
+        "logged": {
+            "message": "S'ha connectat amb l'usuari \"{{username}}\"."
+        },
+        "question": "Si tens qualsevol pregunta sobre JHipster:",
+        "link": {
+            "homepage": "Pàgina preincipal de JHipster",
+            "stackoverflow": "JHipster a Stack Overflow",
+            "bugtracker": "JHipster seguiment d'incidencies",
+            "chat": "JHipster public chat room",
+            "follow": "Contacte @java_hipster a Twitter"
+        },
+        "like": "Si li agrada JHipster, no oblidi donar-nos una estrella",
+        "github": "GitHub",
+        "form": {
+            "country": "País",
+            "location": "Ubicació",
+            "bedroom": "Dormitori",
+            "bathroom": "Bany",
+            "status": "Estat",
+            "type": "Tipus",
+            "minprice": "Preu Mínim",
+            "maxprice": "Preu Màxim",
+            "button": "Cerca"
+        }
+    }
+}

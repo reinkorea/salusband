@@ -1,0 +1,44 @@
+<div ng-include="'app/layouts/header/header.categories.html'"></div>
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="blog-container">
+                    <div class="blog-content">
+                        <ng-map id="contactMap" center="{{vm.company.location.latitude}},{{vm.company.location.longitude}}" zoom="16">
+                            <marker position="[{{vm.company.location.latitude}}, {{vm.company.location.longitude}}]" title="{{vm.company.name}}"></marker>
+                        </ng-map>
+                        <div class="blog-title">
+                            <h2 data-translate="assessoriaTorrellesApp.contact.title1"></h2>
+                            <h3 data-translate="assessoriaTorrellesApp.contact.title2"></h3>
+                        </div>
+                        <div class="blog-text contact">
+                            <div class="row">
+                                <jhi-alert></jhi-alert>
+                                <div class="col-md-8 col-sm-7">
+                                    <form name="form" role="form" ng-submit="vm.sendEmail()">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="{{ 'assessoriaTorrellesApp.contact.inputs.name' | translate }}" ng-model="vm.formData.name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="{{ 'assessoriaTorrellesApp.contact.inputs.mail' | translate }}" ng-model="vm.formData.mail">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="{{ 'assessoriaTorrellesApp.contact.inputs.subject' | translate }}" ng-model="vm.formData.subject">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="5" placeholder="{{ 'assessoriaTorrellesApp.contact.inputs.message' | translate }}" ng-model="vm.formData.message"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" name="submit" class="btn btn-success" data-translate="assessoriaTorrellesApp.contact.button"><i class="fa fa-envelope-o"></i></button>
+                                        </div>
+                                    </form><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<!-- begin:header -->
+<div id="header" class="header-slide" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="quick-search">
+                    <div class="row">
+                        <form role="form">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <label data-translate="home.form.country" for="country">Country</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="filterProvince in vm.filtersList.provinceList">{{filterProvince}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="home.form.bedroom" for="bedroom">Bedroom</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="filterBedroom in vm.filtersList.bedroomList">{{filterBedroom}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- break -->
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <label data-translate="home.form.location" for="location">Location</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="filterTown in vm.filtersList.townList">{{filterTown}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="home.form.bathroom" for="bathroom">Bathroom</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="filterBathroom in vm.filtersList.bathroomList">{{filterBathroom}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- break -->
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <label data-translate="home.form.status" for="status">Status</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="serviceTypeList in vm.filtersList.serviceTypeList">{{serviceTypeList}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="home.form.minprice" for="minprice">Min Price</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="minPriceList in vm.filtersList.minPriceList">{{minPriceList}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- break -->
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group">
+                                    <label data-translate="home.form.type" for="type">Type</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="buildingTypeList in vm.filtersList.buildingTypeList">{{buildingTypeList}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label data-translate="home.form.maxprice" for="maxprice">Max Price</label>
+                                    <select class="form-control">
+                                        <option ng-repeat="maxPriceList in vm.filtersList.maxPriceList">{{maxPriceList}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12"><input type="submit" name="submit" value="{{ 'home.form.button' | translate }}" class="btn btn-success btn-lg btn-block"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="home-title" class="col-md-6 text-center">
+                <div class="row">
+                    <h1 class="home-title-h1 col-md-12" data-translate="home.title"></h1>
+                    <h2 data-translate="home.subtitle"class="home-title-h2 col-md-12"></h2>
+                    <div class="text-center">
+                        <div class="col-md-6 col-md-offset-3">
+                            <a ui-sref="property" data-translate="home.button" class="btn btn-success btn-lg btn-block"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end:header -->
+<!-- begin:video -->
+<div class="video-resize">
+    <video autoplay loop id="bgvid">
+        <source src="http://arnaugarcia.com/old/assets/video/AssessoriaTorrelles.mp4" type="video/mp4">
+    </video>
+</div>
+<!-- end:video -->
